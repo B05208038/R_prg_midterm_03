@@ -21,9 +21,11 @@ library(plotly)
 library(ggplot2)
 static_gg00<-ggplot(stackloss, aes(x = Air.Flow, y = Water.Temp, color = stack.loss)) +
   geom_point()+
+  
   ggtitle("stack loss vs the position of the environment") +
   xlab("Air Flow") +
-  ylab("Water Temperature")
+  ylab("Water Temperature") +
+  geom_smooth(method = "lm")
 ggplotly(static_gg00)
 
 ```
